@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+}
+
+.sidebar {
+    width: 280px;
+    background-color: dimgray;
+    color: lightgray !important;
+    min-height: 100vh;
+    box-shadow: 1px 3px 7px rgba(0, 0, 0, .1);
+}
+
+.sidebar, a, span, p {
+    color: lightgray !important;
+    text-decoration: none;
+}
+
+.sidebar-items {
+
+}
+
+.collapse > ul {
+    height: 0;
+    overflow: hidden;
+}
+
+.active > ul {
+    height: 100%;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.trigger-collapse {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #434343;
+}
