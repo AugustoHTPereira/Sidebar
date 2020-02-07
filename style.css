@@ -8,6 +8,10 @@
     color: #434343;
 }
 
+li {
+    list-style-type: none;
+}
+
 a {
     color: #4169e1;
     text-decoration: none;
