@@ -1,4 +1,6 @@
 var els = document.getElementsByClassName('trigger-collapse');
+var loader = document.getElementById('loader');
+loader.style.display = 'none';
 console.log('Found', els.length)
 for(let i = 0; i < els.length; i++)
 {
@@ -21,8 +23,6 @@ if(window.innerWidth < 400) {
     document.getElementById("hiderSidebar").title = "Show sidebar";
 }
 
-
-
 const hideSidebar = function()
 {
     console.log("Window width", window.innerWidth);
@@ -39,3 +39,23 @@ const hideSidebar = function()
         document.getElementById("hiderSidebar").title = "Hide sidebar";
     }
 }
+
+const sendRequest = function(uri)
+{
+    loader.style.display = 'block';
+    var request = new XMLHttpRequest();
+    request.open('GET', uri, true);
+    var json = {};
+    request.onload = function() {
+        json = JSON.parse(request.response);
+        document.getElementById("result").innerText = JSON.stringify(request.response);
+        document.getElementById("username").innerText = json.login
+        document.getElementById("email").innerText = json.bio
+        document.getElementById("userprofile").src = json.avatar_url
+        loader.style.display = 'none';
+        console.log(json.avatar_url)
+    }
+    request.send()
+}
+
+sendRequest('https://api.github.com/users/augustohtpereira');

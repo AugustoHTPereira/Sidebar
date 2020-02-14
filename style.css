@@ -210,3 +210,18 @@ a {
         width: 0;
     }
 }
+
+/* Loader  */
+.ld {   
+    width: 100%;
+    height: 3px;
+    background-image: linear-gradient(to right, #4169e1, #ccdaff, #4169e1);
+    display: block;
+    animation: bar-loader .8s infinite ease-in-out;
+}
+
+@keyframes bar-loader {
+    to {
+        background-position: 80vw;
+    }
+}
